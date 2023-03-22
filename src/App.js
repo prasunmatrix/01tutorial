@@ -22,7 +22,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Header/>
+      <Header title="Grocery List"/>
       <Content/>
       <Footer/>
     </div>
