@@ -2,38 +2,53 @@ import React from 'react'
 import { useState } from 'react';
 import {FaTrashAlt} from 'react-icons/fa';
 
-const Content = ({items,handleCheck,handleDelete}) => {
-  // const [items,setItems]=useState([
-  //   {
-  //     id:1,
-  //     checked:true,
-  //     item:"one half pound of bag of Cocoa Covered Almonds Unsalted"
-  //   },
-  //   {
-  //     id:2,
-  //     checked:false,
-  //     item:"Item 2"
-  //   },
-  //   {
-  //     id:3,
-  //     checked:false,
-  //     item:"Item 3"
-  //   }
-  // ]);
-  
+const Content = () => {
+  const [items,setItems]=useState([
+    {
+      id:1,
+      checked:true,
+      item:"one half pound of bag of Cocoa Covered Almonds Unsalted"
+    },
+    {
+      id:2,
+      checked:false,
+      item:"Item 2"
+    },
+    {
+      id:3,
+      checked:false,
+      item:"Item 3"
+    }
+  ]);
+  // const handleNameChange = () =>{
+  //   const names =['Bob','Kevin','Dave','Alex'];
+  //   const int=Math.floor(Math.random()*4);
+  //   //return names[int];
+  //   setName(names[int]);
+  // }
 
-  // const handleCheck=(id)=>{
-  //   const listItems=items.map((item)=> item.id === id ? {...item,checked:!item.checked}:item);
-  //   setItems(listItems);
-  //   localStorage.setItem('shopping',JSON.stringify(listItems));
+  // const handleClick = () => {
+  //   console.log("You clicked it")
   // }
+  // const handleClick2 = (name) => {
+  //   console.log(`${name} clicked it`)
+  // }
+  // const handleClick3 = (e) => {
+  //   console.log(e.target.innerText)
+  // }
+
+  const handleCheck=(id)=>{
+    const listItems=items.map((item)=> item.id === id ? {...item,checked:!item.checked}:item);
+    setItems(listItems);
+    localStorage.setItem('shopping',JSON.stringify(listItems));
+  }
   
-  // const handleDelete=(id) =>{
-  //   //console.log(id);
-  //   const listItems=items.filter((item)=>item.id!==id);
-  //   setItems(listItems);
-  //   localStorage.setItem('shopping',JSON.stringify(listItems));
-  // }
+  const handleDelete=(id) =>{
+    //console.log(id);
+    const listItems=items.filter((item)=>item.id!==id);
+    setItems(listItems);
+    localStorage.setItem('shopping',JSON.stringify(listItems));
+  }
 
   return (
     <main>
